@@ -33,8 +33,7 @@ spacing of components. This can make settings up simple linear layouts easier.
    text_layer_set_background_color(s_top_layer, GColorRed);
 
    // Add to the layout in the first slot, with 50% weighting
-   layout_add_layer_with_params(s_layout, 
-                                text_layer_get_layer(s_top_layer), 0, 50);
+   layout_add_layer_with_params(s_layout, text_layer_get_layer(s_top_layer), 0, 50);
    ```
 
 5. When all elements have been added, add the `Layout` to the `Window`:
@@ -54,6 +53,11 @@ spacing of components. This can make settings up simple linear layouts easier.
    // Destroy the layout
    layout_destroy(s_layout);
    ```
+
+
+# Example
+
+See `test-app` for an example use.
 
 
 # Todo
