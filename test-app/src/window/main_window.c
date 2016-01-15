@@ -22,6 +22,9 @@ static void window_load(Window *window) {
 }
 
 static void window_unload(Window *window) {
+  text_layer_destroy(s_top_layer);
+  text_layer_destroy(s_bottom_layer);
+
   layout_destroy(s_layout);
   window_destroy(window);
 }
