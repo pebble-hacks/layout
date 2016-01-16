@@ -10,7 +10,7 @@ typedef enum {
 typedef struct {
   LayoutOrientation orientation;
   int size;
-  Layer** layer_array;
+  Layer **layer_array;
   int *weight_array;
   GSize window_size;
 } Layout;
