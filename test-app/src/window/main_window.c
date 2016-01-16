@@ -4,6 +4,10 @@ static Window *s_window;
 static Layout *s_layout;
 static TextLayer *s_top_layer, *s_bottom_layer;
 
+static void timer_handler(void *context) {
+  layout_remove_from_window(s_layout);
+}
+
 static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
@@ -19,6 +23,9 @@ static void window_load(Window *window) {
   layout_add_layer_with_params(s_layout, text_layer_get_layer(s_bottom_layer), 1, 50);
 
   layout_add_to_window(s_layout, window);
+
+  // Test removal
+  app_timer_register(5000, timer_handler, NULL);
 }
 
 static void window_unload(Window *window) {
